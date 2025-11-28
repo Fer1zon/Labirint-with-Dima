@@ -1,0 +1,3 @@
+res://scenes/UI/open_tablet.tscn
+res://scenes/tilesets/walls_and_roads.tres
+res://assets/shaders/blur.gdshader

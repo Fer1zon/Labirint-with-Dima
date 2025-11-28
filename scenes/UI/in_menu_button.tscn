@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctwffbxj74eaq"]
+
+[ext_resource type="Script" uid="uid://b1by6t522k0gm" path="res://scripts/UI/in_menu_button.gd" id="1_k3lj3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_up55u"]
+bg_color = Color(0.184314, 0.152941, 0.145098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ws5tn"]
+bg_color = Color(0.192157, 0.164706, 0.141176, 1)
+
+[node name="in_menu_button" type="Button"]
+custom_minimum_size = Vector2(200, 60)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_up55u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ws5tn")
+text = "В меню"
+script = ExtResource("1_k3lj3")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,142 @@
+[gd_scene load_steps=9 format=3 uid="uid://t6dy14xdaxc2"]
+
+[ext_resource type="Script" uid="uid://brqki8km4jy3w" path="res://scripts/UI/defeat_screen.gd" id="1_eoqjr"]
+[ext_resource type="PackedScene" uid="uid://dsv41ehg1idvf" path="res://scenes/UI/block_background.tscn" id="2_i2ih8"]
+[ext_resource type="PackedScene" uid="uid://pp8sktwe5d8s" path="res://scenes/UI/restart_button.tscn" id="3_u06ph"]
+[ext_resource type="PackedScene" uid="uid://ctwffbxj74eaq" path="res://scenes/UI/in_menu_button.tscn" id="4_gogkv"]
+
+[sub_resource type="Animation" id="Animation_lccwt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("block_background:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_py13i"]
+resource_name = "screen_fading"
+length = 3.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.06667, 1.46667, 3.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("block_background:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.26667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"camera_disable"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ws5tn"]
+resource_name = "text_move"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4jxtf"]
+_data = {
+&"RESET": SubResource("Animation_lccwt"),
+&"screen_fading": SubResource("Animation_py13i"),
+&"text_move": SubResource("Animation_ws5tn")
+}
+
+[node name="defeat_screen" type="CanvasLayer"]
+process_mode = 3
+layer = 3
+script = ExtResource("1_eoqjr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 122.0
+offset_bottom = 212.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "Вы погибли!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="background_animation_player" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4jxtf")
+}
+autoplay = "screen_fading"
+
+[node name="block_background" parent="." instance=ExtResource("2_i2ih8")]
+layer = 2
+
+[node name="text_animation_player" type="AnimationPlayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.5
+offset_top = -30.0
+offset_right = 133.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 7
+
+[node name="Button2" parent="HBoxContainer" instance=ExtResource("3_u06ph")]
+layout_mode = 2
+
+[node name="Button" parent="HBoxContainer" instance=ExtResource("4_gogkv")]
+layout_mode = 2

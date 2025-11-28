@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuy75xg8xowp6"]
+
+[ext_resource type="Script" uid="uid://bx5nv08de3p1d" path="res://scripts/signal_timer.gd" id="1_4xbfx"]
+
+[node name="signal_timer" type="Timer"]
+autostart = true
+script = ExtResource("1_4xbfx")
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]

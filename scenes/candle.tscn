@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2wqeqsw0x6p2"]
+
+[ext_resource type="Texture2D" uid="uid://cmhkde8c3du53" path="res://assets/tilemaps/Портал, шипы и тд.png" id="1_ybelu"]
+[ext_resource type="Texture2D" uid="uid://bme2o02lye8al" path="res://assets/lights/2d_lights.webp" id="2_j6qyb"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ybelu"]
+light_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_ybelu"]
+interpolation_mode = 2
+colors = PackedColorArray(0.78, 0.34528, 0.0936, 1, 0.92, 0.66608, 0.0736, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j6qyb"]
+gradient = SubResource("Gradient_ybelu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ije2b"]
+lifetime_randomness = 0.2
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0.8, -4.025, 0)
+angle_min = -30.0
+angle_max = 30.0
+spread = 57.857
+flatness = 0.095
+gravity = Vector3(0, -15, 0)
+linear_accel_min = -5.0
+linear_accel_max = 5.0
+radial_accel_min = -18.0
+radial_accel_max = 22.0
+scale_min = 0.5
+scale_max = 2.8
+color = Color(0.779291, 0.779291, 0.779291, 1)
+color_ramp = SubResource("GradientTexture1D_j6qyb")
+turbulence_enabled = true
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.0
+
+[node name="candle" type="Node2D"]
+light_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 2
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_ybelu")
+hframes = 8
+vframes = 8
+frame = 12
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+light_mask = 2
+position = Vector2(1, -8)
+scale = Vector2(0.5, 0.5)
+color = Color(1, 0.802, 0.46, 1)
+energy = 0.8
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_item_cull_mask = 3
+texture = ExtResource("2_j6qyb")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+light_mask = 2
+material = SubResource("CanvasItemMaterial_ybelu")
+position = Vector2(0, 1)
+amount = 16
+lifetime = 0.75
+speed_scale = 0.7
+randomness = 0.2
+process_material = SubResource("ParticleProcessMaterial_ije2b")

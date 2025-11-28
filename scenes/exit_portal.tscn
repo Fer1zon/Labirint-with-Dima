@@ -1,0 +1,324 @@
+[gd_scene load_steps=17 format=3 uid="uid://corfb6eik1b4q"]
+
+[ext_resource type="Script" uid="uid://boa2nardf663y" path="res://scripts/exit_portal.gd" id="1_uyw7u"]
+[ext_resource type="Texture2D" uid="uid://cmhkde8c3du53" path="res://assets/tilemaps/Портал, шипы и тд.png" id="2_uyw7u"]
+[ext_resource type="Texture2D" uid="uid://bme2o02lye8al" path="res://assets/lights/2d_lights.webp" id="3_l5n14"]
+[ext_resource type="AudioStream" uid="uid://d3d6dkto0e7gh" path="res://sounds/ambient/Ambience_Armory.wav" id="4_asl8k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyw7u"]
+size = Vector2(40, 40)
+
+[sub_resource type="Animation" id="Animation_ebcv0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GPUParticles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_s046h"]
+resource_name = "portal_disable"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.8, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(2, 0), Vector2i(1, 0), Vector2i(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_qu86f"]
+resource_name = "portal_enable"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.199038, 0.398256, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GPUParticles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.214748),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.433333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qu86f"]
+_data = {
+&"RESET": SubResource("Animation_ebcv0"),
+&"portal_disable": SubResource("Animation_s046h"),
+&"portal_enable": SubResource("Animation_qu86f")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ebcv0"]
+light_mode = 1
+
+[sub_resource type="Animation" id="Animation_asl8k"]
+resource_name = "hide"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-19, -35), Vector2(-19, -28)]
+}
+
+[sub_resource type="Animation" id="Animation_sdclj"]
+resource_name = "show"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-19, -28), Vector2(-19, -35)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ebcv0"]
+_data = {
+&"hide_label": SubResource("Animation_asl8k"),
+&"show_label": SubResource("Animation_sdclj")
+}
+
+[sub_resource type="Gradient" id="Gradient_sdclj"]
+colors = PackedColorArray(0.470588, 0.117647, 0.941176, 1, 0.768627, 0.184314, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_asl8k"]
+gradient = SubResource("Gradient_sdclj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qu86f"]
+emission_shape_scale = Vector3(6, 6, 1)
+emission_shape = 3
+emission_box_extents = Vector3(-20, 20, 20)
+gravity = Vector3(0, -10, 0)
+radial_accel_min = -2.23517e-06
+radial_accel_max = 10.0
+scale_min = 0.5
+scale_max = 2.0
+color = Color(0.611765, 0.133333, 1, 1)
+color_ramp = SubResource("GradientTexture1D_asl8k")
+
+[node name="exit_portal" type="Node2D"]
+script = ExtResource("1_uyw7u")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(1.28906, 1.28906)
+color = Color(0.301961, 0.101961, 0.498039, 1)
+energy = 0.0
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_item_cull_mask = 3
+texture = ExtResource("3_l5n14")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_uyw7u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 2
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_uyw7u")
+hframes = 8
+vframes = 8
+
+[node name="PortalAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qu86f")
+}
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_ebcv0")
+offset_left = -19.0
+offset_top = -35.0
+offset_right = 37.0
+offset_bottom = -13.0
+scale = Vector2(0.7, 0.7)
+theme_override_font_sizes/font_size = 16
+text = "press E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ebcv0")
+}
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_ebcv0")
+scale = Vector2(0.125662, 0.125662)
+emitting = false
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_qu86f")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_asl8k")
+volume_db = -18.0
+autoplay = true
+max_distance = 180.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
