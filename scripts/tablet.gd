@@ -2,7 +2,7 @@ extends Node2D
 
 var open_window_link : CanvasLayer
 @onready var opportunity_use : bool = false
-@export var internal_text : String = "Привет друг"
+@export_multiline var internal_text : String = "Привет друг"
 @onready var text_anim_player : AnimationPlayer = $TextAnimationPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

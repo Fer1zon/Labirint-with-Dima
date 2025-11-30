@@ -51,6 +51,11 @@ layout_mode = 2
 text = "3"
 path_to_scene_level = "uid://bjsgfx1wcol2p"
 
+[node name="Button5" parent="HBoxContainer/HBoxContainer" instance=ExtResource("2_08vfn")]
+layout_mode = 2
+text = "Леха лох"
+path_to_scene_level = "uid://c2mcver06ikx8"
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 10

@@ -6,4 +6,6 @@
 autostart = true
 script = ExtResource("1_4xbfx")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
 [connection signal="timeout" from="." to="." method="_on_timeout"]

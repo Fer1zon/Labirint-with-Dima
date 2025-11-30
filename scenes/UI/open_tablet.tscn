@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://y7iyhr3ynpxt"]
+[gd_scene load_steps=8 format=3 uid="uid://y7iyhr3ynpxt"]
 
 [ext_resource type="Shader" uid="uid://bjhwmpcq23sgq" path="res://assets/shaders/blur.gdshader" id="1_cf3ma"]
-[ext_resource type="Texture2D" uid="uid://b5p7ap5fksj8d" path="res://assets/UI/open_table.png" id="2_jnglg"]
+[ext_resource type="Texture2D" uid="uid://do026f2ygsig7" path="res://assets/UI/open_table.png" id="2_jnglg"]
+[ext_resource type="Theme" uid="uid://clh85pmgaclym" path="res://themes/scroll_theme.tres" id="3_lrm8t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m7lnv"]
 shader = ExtResource("1_cf3ma")
@@ -47,7 +48,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.466667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(215, 659), Vector2(215, 143)]
+"values": [Vector2(215, 729.9999), Vector2(215, 143)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -91,20 +92,20 @@ grow_vertical = 2
 custom_minimum_size = Vector2(723, 363)
 layout_mode = 1
 anchor_left = 0.186632
-anchor_top = 1.01698
+anchor_top = 1.1265477
 anchor_right = 0.814236
-anchor_bottom = 1.57716
+anchor_bottom = 1.686728
 offset_left = -7.6293945e-05
-offset_top = -0.0030517578
+offset_top = -71.00293
 offset_right = 0.00012207031
-offset_bottom = 0.00079345703
+offset_bottom = -70.999756
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="Sprite2D" parent="Control/tablet"]
-position = Vector2(361, 261.99988)
-scale = Vector2(7.2031255, 7.2031255)
+[node name="Table" type="Sprite2D" parent="Control/tablet"]
+position = Vector2(361, 244.99985)
+scale = Vector2(12.624999, 12.624998)
 texture = ExtResource("2_jnglg")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/tablet"]
@@ -121,6 +122,8 @@ theme_override_constants/margin_bottom = 20
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Control/tablet/MarginContainer"]
 layout_mode = 2
+theme = ExtResource("3_lrm8t")
+horizontal_scroll_mode = 0
 
 [node name="Label" type="RichTextLabel" parent="Control/tablet/MarginContainer/ScrollContainer"]
 custom_minimum_size = Vector2(500, 0)

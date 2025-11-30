@@ -14,7 +14,6 @@ func _physics_process(delta: float) -> void:
 	if is_action:
 		return
 	var direction = Input.get_vector("walkLeft", "walkRight", "walkTop", "walkBottom")
-	print(direction)
 	if direction.x < 0:
 		$AnimatedSprite2D.flip_h = true
 	elif direction.x > 0:
@@ -35,11 +34,19 @@ func death():
 		var game_over_scene = load("res://scenes/UI/defeat_screen.tscn").instantiate()
 		add_child.call_deferred(game_over_scene)
 		is_death = true
-	
+		#var animation_player : AnimationPlayer = $level_complete_scene/background_animation_player
+		#animation_player.finish
+		
+
+func test_f():
+	print(1)
 func level_complete(level_number : int):
 	var level_complete_scene = load("res://scenes/UI/win_screen.tscn").instantiate()
 	level_complete_scene.level_number = level_number
 	add_child.call_deferred(level_complete_scene)
+	
+	
+	
 	
 func change_action_state(value : bool):
 	is_action = value

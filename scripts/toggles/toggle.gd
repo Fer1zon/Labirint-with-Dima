@@ -9,6 +9,7 @@ extends Node2D
 @export var toggled_delay : float = 1
 @export var enabled : bool = false#Собственный статус
 @export var use_self_enabled_value = false #Если True, то все связаные объекты будут получать статус рычага. Если false то каждый будет менять в зависимости от своего
+@export var switch_object_on_toggle_status_onready = false #Используеться в свзяке с use_self_enabled_value, если true то при инициализации он будет переключать все привязанные объекты на свой статус
 @onready var switch_toggle_sounds : Array = [
 	preload("res://sounds/items/toggle/toggle_switch1.wav"),
 	preload("res://sounds/items/toggle/toggle_switch2.wav")
@@ -19,7 +20,7 @@ extends Node2D
 
 
 func _ready() -> void:
-	if use_self_enabled_value:
+	if use_self_enabled_value and switch_object_on_toggle_status_onready:
 		for object in switch_object:
 			if object.has_method("take_signal"):
 				object.take_signal.call_deferred(enabled)
