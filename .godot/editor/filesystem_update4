@@ -1,14 +1,3 @@
-res://scenes/tablet.tscn
+res://scenes/levels/leha_level.tscn
 res://scenes/tilesets/walls_and_roads.tres
 res://assets/shaders/blur.gdshader
-res://scripts/tablet.gd
-res://scenes/levels/leha_level.tscn
-res://scenes/UI/open_tablet.tscn
-res://scenes/candle.tscn
-res://themes/scroll_theme.tres
-res://scenes/levels/level_2.tscn
-res://scenes/player.tscn
-res://scripts/player.gd
-res://scenes/toggles/toggle.tscn
-res://scripts/toggles/toggle.gd
-res://scenes/levels/test_level.tscn
