@@ -5,3 +5,6 @@ var level_number : int
 func _ready() -> void:
 	get_tree().paused = true
 	$Label.text = "Уровень " + str(level_number) + " пройден!"
+
+func camera_disable():
+	get_parent().get_node("Camera2D").enabled = false

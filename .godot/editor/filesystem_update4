@@ -12,3 +12,9 @@ res://scripts/player.gd
 res://scenes/toggles/toggle.tscn
 res://scripts/toggles/toggle.gd
 res://scenes/levels/test_level.tscn
+res://scenes/exit_portal.tscn
+res://scenes/UI/defeat_screen.tscn
+res://scenes/levels/base_level_scene.tscn
+res://scripts/UI/defeat_screen.gd
+res://scenes/UI/win_screen.tscn
+res://scripts/UI/win_screen.gd
