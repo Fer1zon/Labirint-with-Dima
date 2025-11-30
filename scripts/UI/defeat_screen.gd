@@ -12,5 +12,4 @@ func _process(delta: float) -> void:
 	pass
 	
 func camera_disable():
-	pass
-	#get_parent().get_node("Camera2D").enabled = false
+	get_parent().get_node("Camera2D").enabled = false

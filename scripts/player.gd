@@ -34,8 +34,8 @@ func death():
 		var game_over_scene = load("res://scenes/UI/defeat_screen.tscn").instantiate()
 		add_child.call_deferred(game_over_scene)
 		is_death = true
-		#var animation_player : AnimationPlayer = $level_complete_scene/background_animation_player
-		#animation_player.finish
+
+		
 		
 
 func test_f():
