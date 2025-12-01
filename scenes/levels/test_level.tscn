@@ -42,7 +42,7 @@ switch_object = [NodePath("../../throns"), null]
 toggled_delay = 0.5
 
 [node name="toggle3" parent="toggles" index="1" node_paths=PackedStringArray("switch_object") instance=ExtResource("4_v45ci")]
-position = Vector2(297, 584)
+position = Vector2(299, 561)
 switch_object = [NodePath("../../throns/throns"), NodePath("../../throns/throns2")]
 toggled_delay = 0.5
 oneshot = true
