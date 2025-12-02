@@ -34,6 +34,9 @@ func _physics_process(delta: float) -> void:
 
 func death():
 	if not is_death:
+		
+		$AnimatedSprite2D.stop()
+		
 		var game_over_scene = "res://scenes/UI/defeat_screen.tscn"
 		var level_number = get_parent().get_meta("level_number")
 		is_death = true
@@ -53,6 +56,10 @@ func death():
 func test_f():
 	print(1)
 func level_complete(level_number : int):
+	
+	is_action = true
+	$AnimatedSprite2D.stop()
+	
 	var level_complete_scene = "res://scenes/UI/win_screen.tscn"
 	Global.end_game_data = {
 		
