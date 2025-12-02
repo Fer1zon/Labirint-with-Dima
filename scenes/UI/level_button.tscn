@@ -2,18 +2,18 @@
 
 [ext_resource type="Script" uid="uid://dqmkotooxwbqg" path="res://scripts/UI/level_button.gd" id="1_djhdf"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71xvv"]
-bg_color = Color(0.184314, 0.152941, 0.145098, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rulh7"]
 bg_color = Color(0.192157, 0.164706, 0.141176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71xvv"]
+bg_color = Color(0.184314, 0.152941, 0.145098, 1)
 
 [node name="Button" type="Button"]
 light_mask = 0
 custom_minimum_size = Vector2(100, 100)
 theme_override_font_sizes/font_size = 48
-theme_override_styles/hover = SubResource("StyleBoxFlat_71xvv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_rulh7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_71xvv")
 text = "0"
 icon_alignment = 1
 script = ExtResource("1_djhdf")

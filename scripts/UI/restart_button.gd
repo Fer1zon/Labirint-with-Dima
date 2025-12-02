@@ -11,4 +11,4 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 	get_tree().paused = false
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file(Global.end_game_data["level_scene"])

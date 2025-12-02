@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" uid="uid://dhmanokbycdfm" path="res://scripts/UI/restart_button.gd" id="1_7dv3x"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_up55u"]
-bg_color = Color(0.184314, 0.152941, 0.145098, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ws5tn"]
 bg_color = Color(0.192157, 0.164706, 0.141176, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_up55u"]
+bg_color = Color(0.184314, 0.152941, 0.145098, 1)
+
 [node name="restart_button" type="Button"]
 custom_minimum_size = Vector2(60, 60)
-theme_override_styles/hover = SubResource("StyleBoxFlat_up55u")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ws5tn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_up55u")
 script = ExtResource("1_7dv3x")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

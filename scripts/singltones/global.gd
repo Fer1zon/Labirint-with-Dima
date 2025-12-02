@@ -1,5 +1,9 @@
 extends Node
 
+var end_game_data : Dictionary = {
+	"level_scene" : null,
+	"level_number" : null
+}
 
 func play_global_sound(load_sound : Resource, audio_bus : String = "SFX"):
 	var audio_player:AudioStreamPlayer = AudioStreamPlayer.new()

@@ -7,7 +7,7 @@
 [node name="base_level_scene" type="Node2D"]
 metadata/level_number = -1
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
+[node name="Dark" type="CanvasModulate" parent="."]
 z_as_relative = false
 color = Color(0, 0, 0, 1)
 
