@@ -22,8 +22,14 @@ func _physics_process(delta: float) -> void:
 	elif direction.x > 0:
 		$AnimatedSprite2D.flip_h = false
 	
-	if direction.x != 0 or direction.y != 0:
-		$AnimatedSprite2D.play("walk")
+	if direction.x != 0:
+		$AnimatedSprite2D.play("walk_left_right")
+		
+	elif direction.y != 0:
+		if direction.y <= 1 and direction.y > 0:
+			$AnimatedSprite2D.play("walk_bottom")
+		elif direction.y >= -1 and direction.y < 0:
+			$AnimatedSprite2D.play("walk_top")
 	
 	else:
 		$AnimatedSprite2D.play("idle")
@@ -53,8 +59,7 @@ func death():
 		
 		
 
-func test_f():
-	print(1)
+
 func level_complete(level_number : int):
 	
 	is_action = true

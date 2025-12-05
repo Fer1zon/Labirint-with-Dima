@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://d36y3bmf4q08s"]
+
+[ext_resource type="PackedScene" uid="uid://dsv41ehg1idvf" path="res://scenes/UI/block_background.tscn" id="1_grwcp"]
+[ext_resource type="PackedScene" uid="uid://csvl7ugf5li2t" path="res://scenes/UI/level_button.tscn" id="2_5vuwt"]
+[ext_resource type="PackedScene" uid="uid://bbt8lpwygv4f8" path="res://scenes/UI/bact_to_button.tscn" id="3_5vuwt"]
+
+[node name="levels_menu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="block_background" parent="." instance=ExtResource("1_grwcp")]
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_default_cursor_shape = 9
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Уровни"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 17
+alignment = 1
+
+[node name="Button" parent="HBoxContainer/HBoxContainer" instance=ExtResource("2_5vuwt")]
+layout_mode = 2
+path_to_scene_level = "uid://cs00ws82oo34m"
+
+[node name="Button2" parent="HBoxContainer/HBoxContainer" instance=ExtResource("2_5vuwt")]
+layout_mode = 2
+text = "1"
+path_to_scene_level = "uid://dy2hfxkcy68gh"
+
+[node name="Button3" parent="HBoxContainer/HBoxContainer" instance=ExtResource("2_5vuwt")]
+layout_mode = 2
+text = "2"
+path_to_scene_level = "uid://ddoek1xujgclr"
+
+[node name="Button4" parent="HBoxContainer/HBoxContainer" instance=ExtResource("2_5vuwt")]
+layout_mode = 2
+text = "3"
+path_to_scene_level = "uid://c2mcver06ikx8"
+
+[node name="BactToButton" parent="." instance=ExtResource("3_5vuwt")]
+layout_mode = 2

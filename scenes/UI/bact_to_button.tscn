@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbt8lpwygv4f8"]
+
+[ext_resource type="Script" uid="uid://b6132gp75i8jn" path="res://scripts/UI/bact_to_button.gd" id="1_7ufg6"]
+
+[node name="BactToButton" type="Button"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 8.0
+offset_bottom = 8.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_7ufg6")
+back_to = "res://scenes/main_menu.tscn"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

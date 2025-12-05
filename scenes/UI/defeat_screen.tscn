@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://t6dy14xdaxc2"]
+[gd_scene load_steps=11 format=3 uid="uid://t6dy14xdaxc2"]
 
 [ext_resource type="PackedScene" uid="uid://dsv41ehg1idvf" path="res://scenes/UI/block_background.tscn" id="2_i2ih8"]
 [ext_resource type="PackedScene" uid="uid://pp8sktwe5d8s" path="res://scenes/UI/restart_button.tscn" id="3_u06ph"]
@@ -69,6 +69,44 @@ _data = {
 &"text_move": SubResource("Animation_ws5tn")
 }
 
+[sub_resource type="Animation" id="Animation_eoqjr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("defeat_screen/CanvasLayer/Label:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_l1fn1"]
+resource_name = "text_move"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("defeat_screen/CanvasLayer/Label:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1, 1.51, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.04363323129985824, 0.0, 0.04363323129985824, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i2ih8"]
+_data = {
+&"RESET": SubResource("Animation_eoqjr"),
+&"text_move": SubResource("Animation_l1fn1")
+}
+
 [node name="defeat_screen" type="Control"]
 process_mode = 3
 layout_mode = 3
@@ -85,6 +123,10 @@ autoplay = "screen_fading"
 
 [node name="text_animation_player" type="AnimationPlayer" parent="."]
 root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_i2ih8")
+}
+autoplay = "text_move"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -119,6 +161,7 @@ offset_top = -151.0
 offset_bottom = -63.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(576, 44)
 theme_override_font_sizes/font_size = 64
 text = "Вы погибли!"
 horizontal_alignment = 1

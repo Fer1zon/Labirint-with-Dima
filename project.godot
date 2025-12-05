@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Лабиринт с димой"
 config/version="1.0"
-run/main_scene="uid://d36y3bmf4q08s"
+run/main_scene="uid://dnikf5kd6hyu"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/show_image=false
 config/icon="uid://hw0qosbh4d7a"
@@ -80,6 +80,7 @@ left_click={
 2d_physics/layer_4="traps"
 2d_physics/layer_5="player_legs"
 2d_physics/layer_6="env"
+2d_physics/layer_7="transparent_walls"
 
 [rendering]
 
