@@ -33,3 +33,5 @@ script = ExtResource("3_5m8m5")
 [node name="tablets" type="Node2D" parent="."]
 
 [node name="traps_timers" type="Node2D" parent="."]
+
+[node name="env" type="Node2D" parent="."]
