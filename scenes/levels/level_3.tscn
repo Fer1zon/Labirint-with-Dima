@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://c2mcver06ikx8"]
+[gd_scene load_steps=25 format=4 uid="uid://c2mcver06ikx8"]
 
 [ext_resource type="PackedScene" uid="uid://d3g30etpy38rd" path="res://scenes/levels/base_level_scene.tscn" id="1_xdnyo"]
 [ext_resource type="PackedScene" uid="uid://cuy75xg8xowp6" path="res://scenes/signal_timer.tscn" id="2_7wasl"]
@@ -13,6 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://cmhkde8c3du53" path="res://assets/tilemaps/Портал, шипы и тд.png" id="9_5ptpu"]
 [ext_resource type="PackedScene" uid="uid://ciiorn26ve1ww" path="res://scenes/tablet.tscn" id="10_xl3u7"]
 [ext_resource type="PackedScene" uid="uid://2auo6uy72apf" path="res://scenes/toggles/pressure_plate.tscn" id="11_yiwy5"]
+[ext_resource type="PackedScene" uid="uid://c5w71hp164oie" path="res://scenes/environment/skull.tscn" id="14_1nwmf"]
+[ext_resource type="PackedScene" uid="uid://bqup72ffjndtp" path="res://scenes/environment/skull_2.tscn" id="15_5f5xw"]
+[ext_resource type="PackedScene" uid="uid://c3qwrqdv6yxct" path="res://scenes/environment/bones.tscn" id="16_o3ttr"]
+[ext_resource type="PackedScene" uid="uid://b0p74s42vockg" path="res://scenes/environment/mirror.tscn" id="17_kdsi4"]
+[ext_resource type="PackedScene" uid="uid://cttpjxsnrmpa0" path="res://scenes/environment/skeleton_1.tscn" id="18_kva3v"]
+[ext_resource type="PackedScene" uid="uid://fhr20jigxpdk" path="res://scenes/environment/chain_2.tscn" id="19_jql0x"]
+[ext_resource type="PackedScene" uid="uid://diywbepqph51h" path="res://scenes/environment/chain_1.tscn" id="20_do6pa"]
 
 [sub_resource type="Animation" id="Animation_t0dcl"]
 length = 0.001
@@ -560,6 +567,134 @@ switch_object = [NodePath("../../throns/throns54")]
 [node name="big_room_timer" parent="traps_timers" index="8" node_paths=PackedStringArray("switch_object") instance=ExtResource("2_7wasl")]
 wait_time = 1.75
 switch_object = [NodePath("../../dart_throws/dart_thrower7"), NodePath("../../dart_throws/dart_thrower6"), NodePath("../../dart_throws/dart_thrower5"), NodePath("../../dart_throws/dart_thrower8"), NodePath("../../dart_throws/dart_thrower9"), NodePath("../../dart_throws/dart_thrower10"), NodePath("../../dart_throws/dart_thrower11")]
+
+[node name="skull" parent="env" index="0" instance=ExtResource("14_1nwmf")]
+position = Vector2(93, 215)
+scale = Vector2(0.96874994, 0.96874994)
+
+[node name="skull2" parent="env" index="1" instance=ExtResource("15_5f5xw")]
+position = Vector2(182, 305)
+scale = Vector2(1.6250002, 1.6250002)
+
+[node name="bones" parent="env" index="2" instance=ExtResource("16_o3ttr")]
+position = Vector2(113, 229)
+scale = Vector2(2.2499993, 2.2499995)
+
+[node name="mirror" parent="env" index="3" instance=ExtResource("17_kdsi4")]
+position = Vector2(620.00006, 33)
+
+[node name="skeleton" parent="env" index="4" instance=ExtResource("18_kva3v")]
+position = Vector2(1152.0001, 581)
+scale = Vector2(1.0799905, 1.0799905)
+flip_h = true
+
+[node name="bones2" parent="env" index="5" instance=ExtResource("16_o3ttr")]
+position = Vector2(1594, 384)
+scale = Vector2(2.0625, 2.0625002)
+
+[node name="skull3" parent="env" index="6" instance=ExtResource("15_5f5xw")]
+position = Vector2(1512, -92.00001)
+scale = Vector2(1.5625048, 1.5625048)
+
+[node name="skull4" parent="env" index="7" instance=ExtResource("14_1nwmf")]
+position = Vector2(-436, 94)
+scale = Vector2(0.87499934, 0.87499934)
+
+[node name="bones3" parent="env" index="8" instance=ExtResource("16_o3ttr")]
+position = Vector2(-416, 103)
+
+[node name="mirror2" parent="env" index="9" instance=ExtResource("17_kdsi4")]
+position = Vector2(-146, 105.000015)
+
+[node name="Chain" parent="env" index="10" instance=ExtResource("19_jql0x")]
+position = Vector2(432, 248)
+
+[node name="Chain2" parent="env" index="11" instance=ExtResource("19_jql0x")]
+position = Vector2(208, 249)
+
+[node name="Chain3" parent="env" index="12" instance=ExtResource("20_do6pa")]
+position = Vector2(281, 252)
+
+[node name="Chain4" parent="env" index="13" instance=ExtResource("20_do6pa")]
+position = Vector2(357, 252)
+
+[node name="Chain5" parent="env" index="14" instance=ExtResource("20_do6pa")]
+position = Vector2(482, 92)
+
+[node name="Chain6" parent="env" index="15" instance=ExtResource("20_do6pa")]
+position = Vector2(600, 13)
+
+[node name="Chain7" parent="env" index="16" instance=ExtResource("19_jql0x")]
+position = Vector2(713, 213)
+
+[node name="Chain8" parent="env" index="17" instance=ExtResource("20_do6pa")]
+position = Vector2(758, 452)
+
+[node name="Chain9" parent="env" index="18" instance=ExtResource("19_jql0x")]
+position = Vector2(723, 533)
+
+[node name="Chain10" parent="env" index="19" instance=ExtResource("20_do6pa")]
+position = Vector2(1234, 453)
+
+[node name="Chain11" parent="env" index="20" instance=ExtResource("20_do6pa")]
+position = Vector2(1378, -26)
+
+[node name="Chain12" parent="env" index="21" instance=ExtResource("19_jql0x")]
+position = Vector2(1297, -108)
+
+[node name="Chain13" parent="env" index="22" instance=ExtResource("20_do6pa")]
+position = Vector2(1046, -191)
+
+[node name="Chain14" parent="env" index="23" instance=ExtResource("20_do6pa")]
+position = Vector2(983, -266)
+
+[node name="Chain15" parent="env" index="24" instance=ExtResource("19_jql0x")]
+position = Vector2(770, -271)
+
+[node name="Chain16" parent="env" index="25" instance=ExtResource("20_do6pa")]
+position = Vector2(829, -269)
+
+[node name="Chain17" parent="env" index="26" instance=ExtResource("20_do6pa")]
+position = Vector2(712, -465)
+
+[node name="Chain18" parent="env" index="27" instance=ExtResource("19_jql0x")]
+position = Vector2(323, -467)
+
+[node name="Chain19" parent="env" index="28" instance=ExtResource("20_do6pa")]
+position = Vector2(124, -467)
+
+[node name="Chain20" parent="env" index="29" instance=ExtResource("20_do6pa")]
+position = Vector2(-81, -306)
+
+[node name="Chain21" parent="env" index="30" instance=ExtResource("20_do6pa")]
+position = Vector2(-246, -389)
+
+[node name="Chain22" parent="env" index="31" instance=ExtResource("19_jql0x")]
+position = Vector2(-379, -388)
+
+[node name="Chain23" parent="env" index="32" instance=ExtResource("19_jql0x")]
+position = Vector2(73, 130)
+
+[node name="Chain24" parent="env" index="33" instance=ExtResource("20_do6pa")]
+position = Vector2(-115, 249)
+
+[node name="Chain25" parent="env" index="34" instance=ExtResource("19_jql0x")]
+position = Vector2(-84, 91)
+
+[node name="Chain26" parent="env" index="35" instance=ExtResource("20_do6pa")]
+position = Vector2(-351, 94)
+
+[node name="Chain27" parent="env" index="36" instance=ExtResource("19_jql0x")]
+position = Vector2(-342, -150)
+
+[node name="Chain28" parent="env" index="37" instance=ExtResource("20_do6pa")]
+position = Vector2(-36, 497)
+
+[node name="Chain29" parent="env" index="38" instance=ExtResource("19_jql0x")]
+position = Vector2(-5, 289)
+
+[node name="Chain30" parent="env" index="39" instance=ExtResource("20_do6pa")]
+position = Vector2(0, 375)
 
 [connection signal="body_entered" from="toggles/pressure_plate13/Area2D" to="toggles/pressure_plate13" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="toggles/pressure_plate13/Area2D" to="toggles/pressure_plate13" method="_on_area_2d_body_exited"]
