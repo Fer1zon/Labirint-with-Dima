@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmhkde8c3du53"
-path="res://.godot/imported/Портал, шипы и тд.png-f84f0f55dd9a37c581d368972c9df0e4.ctex"
+uid="uid://gr3snodssgbb"
+path="res://.godot/imported/letters_symbols_keyboard.png-156e51491305be2c6b4c7a1d38be9f66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/Портал, шипы и тд.png"
-dest_files=["res://.godot/imported/Портал, шипы и тд.png-f84f0f55dd9a37c581d368972c9df0e4.ctex"]
+source_file="res://assets/UI/letters_symbols_keyboard.png"
+dest_files=["res://.godot/imported/letters_symbols_keyboard.png-156e51491305be2c6b4c7a1d38be9f66.ctex"]
 
 [params]
 

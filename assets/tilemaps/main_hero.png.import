@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmhkde8c3du53"
-path="res://.godot/imported/Портал, шипы и тд.png-f84f0f55dd9a37c581d368972c9df0e4.ctex"
+uid="uid://bk77ltb4dwv38"
+path="res://.godot/imported/main_hero.png-61dfa73de9555f8ac46115b41636d462.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/Портал, шипы и тд.png"
-dest_files=["res://.godot/imported/Портал, шипы и тд.png-f84f0f55dd9a37c581d368972c9df0e4.ctex"]
+source_file="res://assets/tilemaps/main_hero.png"
+dest_files=["res://.godot/imported/main_hero.png-61dfa73de9555f8ac46115b41636d462.ctex"]
 
 [params]
 

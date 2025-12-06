@@ -50,6 +50,8 @@ func _input(event: InputEvent) -> void:
 						object.take_signal(enabled)
 			else:
 				for object in switch_object:
+					if object == null:
+						continue
 					if object.has_method("take_signal"):
 						object.take_signal()
 		

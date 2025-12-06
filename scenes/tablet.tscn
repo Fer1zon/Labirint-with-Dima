@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ciiorn26ve1ww"]
+[gd_scene load_steps=10 format=3 uid="uid://ciiorn26ve1ww"]
 
 [ext_resource type="Script" uid="uid://wgea6ex3yvru" path="res://scripts/tablet.gd" id="1_jwrmr"]
 [ext_resource type="Texture2D" uid="uid://cmhkde8c3du53" path="res://assets/tilemaps/Портал, шипы и тд.png" id="2_suit2"]
+[ext_resource type="Texture2D" uid="uid://gr3snodssgbb" path="res://assets/UI/letters_symbols_keyboard.png" id="3_suit2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ctd3"]
 size = Vector2(18, 20)
@@ -34,7 +35,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-19, -35), Vector2(-19, -28)]
+"values": [Vector2(0, -22), Vector2(0, -18)]
 }
 
 [sub_resource type="Animation" id="Animation_sdclj"]
@@ -47,7 +48,7 @@ tracks/0/path = NodePath("Label:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0.03333333, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -62,11 +63,39 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-19, -28), Vector2(-19, -35)]
+"values": [Vector2(0, -18), Vector2(0, -22)]
+}
+
+[sub_resource type="Animation" id="Animation_5ctd3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ebcv0"]
 _data = {
+&"RESET": SubResource("Animation_5ctd3"),
 &"hide_label": SubResource("Animation_asl8k"),
 &"show_label": SubResource("Animation_sdclj")
 }
@@ -88,19 +117,15 @@ collision_layer = 32
 scale = Vector2(1.4, 1.4)
 shape = SubResource("RectangleShape2D_5ctd3")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 z_as_relative = false
 material = SubResource("CanvasItemMaterial_jwrmr")
-offset_left = -19.0
-offset_top = -28.0
-offset_right = 37.0
-offset_bottom = -6.0
-scale = Vector2(0.7, 0.7)
-theme_override_font_sizes/font_size = 16
-text = "press E"
-horizontal_alignment = 1
-vertical_alignment = 1
+scale = Vector2(1.125, 1.125)
+texture = ExtResource("3_suit2")
+hframes = 8
+vframes = 14
+frame = 20
 
 [node name="TextAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
