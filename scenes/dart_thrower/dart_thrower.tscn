@@ -1,18 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://cwsdsvqnv7ytv"]
 
 [ext_resource type="Script" uid="uid://bol0nsuktv731" path="res://scripts/dart_thrower/dart_thrower.gd" id="1_4o0mu"]
-[ext_resource type="Texture2D" uid="uid://cmhkde8c3du53" path="res://assets/tilemaps/Портал, шипы и тд.png" id="1_gnrpv"]
+[ext_resource type="Texture2D" uid="uid://cmhkde8c3du53" path="res://assets/tilemaps/location_1/Портал, шипы и тд.png" id="1_gnrpv"]
 
 [node name="dart_thrower" type="Node2D"]
 light_mask = 2
 script = ExtResource("1_4o0mu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2.25, 2.25)
 texture = ExtResource("1_gnrpv")
 hframes = 8
 vframes = 8
 frame = 13
 
 [node name="direction_point" type="Node2D" parent="."]
-position = Vector2(-12, 0)
+position = Vector2(-6, 0)

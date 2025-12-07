@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bib6wg23ay04c"]
+
+[ext_resource type="Texture2D" uid="uid://cmhkde8c3du53" path="res://assets/tilemaps/location_1/Портал, шипы и тд.png" id="1_vnvu4"]
+[ext_resource type="Script" uid="uid://dpdx2vkogndyh" path="res://scripts/level_2/bridge_builder.gd" id="1_w2ydq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2ydq"]
+size = Vector2(6.3999996, 6.3999996)
+
+[node name="Sprite2D" type="Sprite2D"]
+top_level = true
+texture = ExtResource("1_vnvu4")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+script = ExtResource("1_w2ydq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(2.5, 2.5)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_w2ydq")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(1.0000001, 0)
+scale = Vector2(2.5, 2.5)
