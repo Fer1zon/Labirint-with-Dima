@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=3 uid="uid://corfb6eik1b4q"]
 
 [ext_resource type="Script" uid="uid://boa2nardf663y" path="res://scripts/exit_portal.gd" id="1_uyw7u"]
-[ext_resource type="Texture2D" uid="uid://cmhkde8c3du53" path="res://assets/tilemaps/Портал, шипы и тд.png" id="2_uyw7u"]
+[ext_resource type="Texture2D" uid="uid://cmhkde8c3du53" path="res://assets/tilemaps/location_1/Портал, шипы и тд.png" id="2_uyw7u"]
 [ext_resource type="Texture2D" uid="uid://bme2o02lye8al" path="res://assets/lights/2d_lights.webp" id="3_l5n14"]
-[ext_resource type="AudioStream" uid="uid://d3d6dkto0e7gh" path="res://sounds/ambient/Ambience_Armory.wav" id="4_asl8k"]
+[ext_resource type="AudioStream" uid="uid://d3d6dkto0e7gh" path="res://sounds/location_1/ambient/Ambience_Armory.wav" id="4_asl8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyw7u"]
 size = Vector2(40, 40)

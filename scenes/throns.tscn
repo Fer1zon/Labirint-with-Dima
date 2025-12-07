@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0j70lhmsdshe"]
 
 [ext_resource type="Script" uid="uid://ch1sk3uj4l84u" path="res://scripts/throns.gd" id="1_j5ipq"]
-[ext_resource type="Texture2D" uid="uid://cmhkde8c3du53" path="res://assets/tilemaps/Портал, шипы и тд.png" id="2_j5ipq"]
+[ext_resource type="Texture2D" uid="uid://cmhkde8c3du53" path="res://assets/tilemaps/location_1/Портал, шипы и тд.png" id="2_j5ipq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5ipq"]
 size = Vector2(31, 31)

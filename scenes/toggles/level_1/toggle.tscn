@@ -1,0 +1,140 @@
+[gd_scene load_steps=9 format=3 uid="uid://bcekpy2x7cgnh"]
+
+[ext_resource type="Script" uid="uid://dnjiyw5tmeqkn" path="res://scripts/toggles/location_1/toggle.gd" id="1_160rp"]
+[ext_resource type="Texture2D" uid="uid://cmhkde8c3du53" path="res://assets/tilemaps/location_1/Портал, шипы и тд.png" id="2_160rp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_160rp"]
+size = Vector2(37, 33)
+
+[sub_resource type="Animation" id="Animation_160rp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-19, -14)]
+}
+
+[sub_resource type="Animation" id="Animation_hyq6k"]
+resource_name = "hide"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-19, -30), Vector2(-19, -23)]
+}
+
+[sub_resource type="Animation" id="Animation_med4h"]
+resource_name = "show"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-19, -23), Vector2(-19, -30)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dr2ce"]
+_data = {
+&"RESET": SubResource("Animation_160rp"),
+&"hide": SubResource("Animation_hyq6k"),
+&"show": SubResource("Animation_med4h")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_160rp"]
+light_mode = 1
+
+[node name="toggle" type="Node2D"]
+script = ExtResource("1_160rp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 2
+scale = Vector2(2, 2)
+texture = ExtResource("2_160rp")
+hframes = 8
+vframes = 8
+frame = 7
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_160rp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_dr2ce")
+}
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_160rp")
+offset_left = -19.0
+offset_top = -14.0
+offset_right = 37.0
+offset_bottom = 8.0
+scale = Vector2(0.7, 0.7)
+theme_override_font_sizes/font_size = 16
+text = "press E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

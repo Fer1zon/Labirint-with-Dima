@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=4 uid="uid://dsv41ehg1idvf"]
 
 [ext_resource type="Script" uid="uid://c783633odxggt" path="res://scripts/UI/blocks_background.gd" id="1_pu61m"]
-[ext_resource type="TileSet" uid="uid://c1vaynhq16k7h" path="res://scenes/tilesets/walls_and_roads.tres" id="2_36ba3"]
+[ext_resource type="TileSet" uid="uid://c1vaynhq16k7h" path="res://scenes/tilesets/walls_and_roads_location_1.tres" id="2_36ba3"]
 [ext_resource type="PackedScene" uid="uid://d0j70lhmsdshe" path="res://scenes/throns.tscn" id="3_36ba3"]
-[ext_resource type="PackedScene" uid="uid://bcekpy2x7cgnh" path="res://scenes/toggles/toggle.tscn" id="4_qc5xt"]
+[ext_resource type="PackedScene" uid="uid://bcekpy2x7cgnh" path="res://scenes/toggles/level_1/toggle.tscn" id="4_qc5xt"]
 
 [node name="block_background" type="ParallaxBackground"]
 script = ExtResource("1_pu61m")

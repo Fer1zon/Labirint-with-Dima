@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c2wqeqsw0x6p2"]
 
-[ext_resource type="Texture2D" uid="uid://cmhkde8c3du53" path="res://assets/tilemaps/Портал, шипы и тд.png" id="1_ybelu"]
+[ext_resource type="Texture2D" uid="uid://cmhkde8c3du53" path="res://assets/tilemaps/location_1/Портал, шипы и тд.png" id="1_ybelu"]
 [ext_resource type="Texture2D" uid="uid://bme2o02lye8al" path="res://assets/lights/2d_lights.webp" id="2_j6qyb"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ybelu"]

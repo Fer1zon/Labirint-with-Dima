@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://ciiorn26ve1ww"]
 
 [ext_resource type="Script" uid="uid://wgea6ex3yvru" path="res://scripts/tablet.gd" id="1_jwrmr"]
-[ext_resource type="Texture2D" uid="uid://cmhkde8c3du53" path="res://assets/tilemaps/Портал, шипы и тд.png" id="2_suit2"]
+[ext_resource type="Texture2D" uid="uid://cmhkde8c3du53" path="res://assets/tilemaps/location_1/Портал, шипы и тд.png" id="2_suit2"]
 [ext_resource type="Texture2D" uid="uid://gr3snodssgbb" path="res://assets/UI/letters_symbols_keyboard.png" id="3_suit2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ctd3"]
