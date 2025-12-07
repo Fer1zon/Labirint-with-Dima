@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 150.0
+const SPEED = 75.0
 @onready var is_action : bool = false
 @onready var is_death : bool = false
 @onready var animation_player : AnimationPlayer = $AnimationPlayer

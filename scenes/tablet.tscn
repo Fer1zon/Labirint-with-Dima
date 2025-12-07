@@ -10,6 +10,33 @@ size = Vector2(18, 20)
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jwrmr"]
 light_mode = 1
 
+[sub_resource type="Animation" id="Animation_5ctd3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_asl8k"]
 resource_name = "hide"
 length = 0.4
@@ -66,33 +93,6 @@ tracks/1/keys = {
 "values": [Vector2(0, -18), Vector2(0, -22)]
 }
 
-[sub_resource type="Animation" id="Animation_5ctd3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ebcv0"]
 _data = {
 &"RESET": SubResource("Animation_5ctd3"),
@@ -101,10 +101,10 @@ _data = {
 }
 
 [node name="tablet" type="Node2D"]
+scale = Vector2(0.65, 0.65)
 script = ExtResource("1_jwrmr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.625, 1.625)
 texture = ExtResource("2_suit2")
 hframes = 8
 vframes = 8
@@ -114,14 +114,12 @@ frame = 11
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(1.4, 1.4)
 shape = SubResource("RectangleShape2D_5ctd3")
 
 [node name="Label" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 z_as_relative = false
 material = SubResource("CanvasItemMaterial_jwrmr")
-scale = Vector2(1.125, 1.125)
 texture = ExtResource("3_suit2")
 hframes = 8
 vframes = 14
