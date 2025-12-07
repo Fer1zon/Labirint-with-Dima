@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Лабиринт с димой"
 config/version="1.0"
-run/main_scene="uid://btkkxdl725ilu"
+run/main_scene="uid://nap7jq2jwmvo"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/show_image=false
 config/icon="uid://hw0qosbh4d7a"
